@@ -1,0 +1,48 @@
+/* ===================== ICONS (feather-style inline SVG, replaces lucide-react) ===================== */
+const ICON_PATHS = {
+  sparkles: '<path d="M12 3l1.6 4.8L18 9.3l-4.4 1.6L12 15.7l-1.6-4.8L6 9.3l4.4-1.5L12 3z"/><path d="M5 15l.8 2.2L8 18l-2.2.8L5 21l-.8-2.2L2 18l2.2-.8L5 15z"/><path d="M19 14l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2z"/>',
+  menu: '<line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>',
+  x: '<line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>',
+  search: '<circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/>',
+  heart: '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/>',
+  heartFill: '<path fill="currentColor" d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/>',
+  cart: '<circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2l2.4 12.3a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 7.5H6"/>',
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6"/>',
+  arrowRight: '<line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/>',
+  arrowLeft: '<line x1="20" y1="12" x2="4" y2="12"/><polyline points="10 6 4 12 10 18"/>',
+  quote: '<path d="M7 8c-2 0-3.5 1.6-3.5 4S5 16 7 16v2c-3 0-5.5-2.6-5.5-6S4 6 7 6v2zM17 8c-2 0-3.5 1.6-3.5 4s1.5 4 3.5 4v2c-3 0-5.5-2.6-5.5-6S14 6 17 6v2z"/>',
+  star: '<polygon points="12 2.5 15 9 22 10 17 15 18.2 21.8 12 18.5 5.8 21.8 7 15 2 10 9 9"/>',
+  chevronLeft: '<polyline points="15 6 9 12 15 18"/>',
+  minus: '<line x1="4" y1="12" x2="20" y2="12"/>',
+  plus: '<line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="12" x2="20" y2="12"/>',
+  shieldCheck: '<path d="M12 2l8 3.5v6c0 5-3.4 8.5-8 10.5-4.6-2-8-5.5-8-10.5v-6L12 2z"/><polyline points="9 12 11 14 15 10"/>',
+  truck: '<rect x="1.5" y="7" width="13" height="9"/><path d="M14.5 10h4l3 3v3h-7z"/><circle cx="6" cy="18.5" r="1.6"/><circle cx="17.5" cy="18.5" r="1.6"/>',
+  refresh: '<polyline points="2 8 6 8 6 4"/><path d="M6 8a8 8 0 0 1 13.7-4.7"/><polyline points="22 16 18 16 18 20"/><path d="M18 16a8 8 0 0 1-13.7 4.7"/>',
+  check: '<polyline points="4 12 9 18 20 6"/>',
+  sliders: '<line x1="4" y1="7" x2="20" y2="7"/><circle cx="9" cy="7" r="2"/><line x1="4" y1="17" x2="20" y2="17"/><circle cx="16" cy="17" r="2"/>',
+  trash: '<polyline points="4 7 20 7"/><path d="M6 7l1 13.5A1.5 1.5 0 0 0 8.5 22h7a1.5 1.5 0 0 0 1.5-1.5L18 7"/><path d="M9.5 7V4.5A1.5 1.5 0 0 1 11 3h2a1.5 1.5 0 0 1 1.5 1.5V7"/>',
+  bag: '<path d="M6 8h12l1 13H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',
+  checkCircle: '<circle cx="12" cy="12" r="9.5"/><polyline points="7.5 12.5 10.5 15.5 16.5 9"/>',
+  mapPin: '<path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/>',
+  phone: '<path d="M5 3.5h4l1.5 5-2.5 1.7a13 13 0 0 0 6 6l1.7-2.5 5 1.5v4a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5z"/>',
+  mail: '<rect x="2.5" y="5" width="19" height="14" rx="1.5"/><polyline points="3 6 12 13 21 6"/>',
+  clock: '<circle cx="12" cy="12" r="9.5"/><polyline points="12 7 12 12 16 14.5"/>',
+  message: '<path d="M4 4.5h16v12H8l-4 3.5v-3.5H4z"/>',
+  send: '<line x1="21" y1="3" x2="10" y2="14"/><polygon points="21 3 14 21 10 14 3 10 21 3"/>',
+  instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/>',
+  facebook: '<path d="M14.5 21v-7.5h2.5l.5-3H14.5V8.3c0-.9.3-1.6 1.6-1.6h1.6V3.9C17.4 3.8 16.2 3.7 15 3.7c-2.5 0-4.2 1.5-4.2 4.3v2.5H8.3v3H10.8V21z"/>',
+  award: '<circle cx="12" cy="8.5" r="5.5"/><polyline points="8.5 13.5 7 21 12 18.5 17 21 15.5 13.5"/>',
+  users: '<circle cx="9" cy="8" r="3.3"/><path d="M2.5 20c1-3.3 3.7-5 6.5-5s5.5 1.7 6.5 5"/><circle cx="17" cy="8.5" r="2.7"/><path d="M16 12.7c2.2.3 4 1.8 4.8 4.3"/>',
+  package: '<path d="M3.5 7.5L12 3l8.5 4.5V16L12 21l-8.5-5V7.5z"/><polyline points="3.5 7.5 12 12 20.5 7.5"/><line x1="12" y1="12" x2="12" y2="21"/>',
+  gift: '<rect x="3" y="9" width="18" height="12" rx="1"/><rect x="2" y="6" width="20" height="4"/><line x1="12" y1="6" x2="12" y2="21"/><path d="M12 6C10 2 5 3 5.5 5.5 6 7 9 6 12 6zM12 6c2-4 7-3 6.5-.5C18 7 15 6 12 6z"/>',
+  gem: '<polygon points="6 3 18 3 22 9 12 21 2 9 6 3"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="9" y1="3" x2="12" y2="9"/><line x1="15" y1="3" x2="12" y2="9"/>',
+  circleRing: '<circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/>',
+  watch: '<circle cx="12" cy="12" r="6.5"/><polyline points="12 9 12 12 14.5 13.5"/><path d="M9.5 3.5h5l.5 3h-6zM9.5 20.5h5l.5-3h-6z"/>',
+  droplet: '<path d="M12 3s7 7.5 7 12.5A7 7 0 0 1 5 15.5C5 10.5 12 3 12 3z"/>',
+  logout: '<path d="M9 4H5.5A1.5 1.5 0 0 0 4 5.5v13A1.5 1.5 0 0 0 5.5 20H9"/><polyline points="15 16 20 11 15 6"/><line x1="20" y1="11" x2="8.5" y2="11"/>',
+};
+
+function svgIcon(name, size, extraAttrs) {
+  const path = ICON_PATHS[name] || '';
+  return `<svg viewBox="0 0 24 24" width="${size||18}" height="${size||18}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ${extraAttrs||''}>${path}</svg>`;
+}
